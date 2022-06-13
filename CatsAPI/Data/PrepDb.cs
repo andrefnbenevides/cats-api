@@ -14,22 +14,6 @@ namespace CatsAPI.Data
 
         private static void SeedData(AppDbContext context)
         {
-            if(!context.Conditions.Any())
-            {
-                Console.WriteLine("--> Seeding data for conditions.");
-                context.Conditions.AddRange(
-                    new Condition(){
-                        Id = 1,
-                        Name = "Dermatological ",
-                        Description = "primary seborrhoea, idiopathic periocular crusting, dermatophytosis (ringworm), Facial fold pyoderma, idiopathic facial dermatitis (a.k.a. dirty face syndrome), multiple epitrichial cysts (eyelids)"
-                    }
-                );
-            }
-            else
-            {
-                Console.WriteLine("--> We already have conditions data.");
-            }
-
             if(!context.Cats.Any())
             {
                 Console.WriteLine("--> Seeding data for cats.");
@@ -40,12 +24,12 @@ namespace CatsAPI.Data
                         AverageLength = 60,
                         AverageLifespan = 12.5M,
                         AverageWeight = 4,
-                        Conditions = context.Conditions,
                         PlaceOfOrigin = "Africa",
                         Species = "Persian",
                         GroomingTips = "You should groom the persian cat daily to avoid problems with tangled hair" 
                     }
                 );
+                context.SaveChanges();
             }
             else
             {

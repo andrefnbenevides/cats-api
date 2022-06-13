@@ -28,9 +28,6 @@ namespace CatsAPI.Models
         public string? SampleImageUrl { get; set; }
 
         [Required]
-        public IEnumerable<Condition> Conditions { get; set; }
-
-        [Required]
         public string GroomingTips { get; set; }
 
     }

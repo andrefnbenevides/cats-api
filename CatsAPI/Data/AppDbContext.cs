@@ -11,6 +11,5 @@ namespace CatsAPI.Data
         }
 
         public DbSet<Cat> Cats { get; set; }
-        public DbSet<Condition> Conditions { get; set; }
     }
 }
