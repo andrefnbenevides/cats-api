@@ -40,7 +40,7 @@ namespace CatsAPI.Controllers
         }
 
         [HttpPost]
-        public ActionResult<CatReadDto> CreatePlatform(CatCreateDto catCreateDto)
+        public ActionResult<CatReadDto> CreateCat(CatCreateDto catCreateDto)
         {
             var catModel = _mapper.Map<Cat>(catCreateDto);
             _repository.CreateCat(catModel);
